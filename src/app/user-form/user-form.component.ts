@@ -78,7 +78,7 @@ export class UserFormComponent implements OnInit {
 
         formData.append("email", this.userCreateForm.value.email);
         
-        this.http.post('http://127.0.0.1:5000/registerUser', formData).subscribe(
+        this.http.post('https://tasmiaishrat.pythonanywhere.com/registerUser', formData).subscribe(
           (response) => console.log(response+'Done:::'),
           (error) => console.log(error)
         )

@@ -21,7 +21,7 @@ export class UsersComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'firstName', 'gender','dateOfBirth','phone','email'];
   returndata = []
   dataSource = new MatTableDataSource<any>(this.returndata);
-  apiURL = 'http://127.0.0.1:5000/getUsers';
+  apiURL = 'https://tasmiaishrat.pythonanywhere.com/getUsers';
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -29,7 +29,7 @@ export class UsersComponent implements AfterViewInit {
 
   ngOnInit(){
 
-    this.http.get<any>('http://127.0.0.1:5000/getUsers').subscribe(data => {
+    this.http.get<any>('https://tasmiaishrat.pythonanywhere.com/getUsers').subscribe(data => {
       this.returndata = data.data;
       console.log(this.returndata)
       this.dataSource = new MatTableDataSource<any>(this.returndata);
